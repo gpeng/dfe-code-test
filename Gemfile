@@ -42,6 +42,8 @@ group :development, :test do
   gem "capybara", "~> 3.33"
 
   gem "dotenv-rails"
+  gem "factory_bot_rails"
+  gem "faker"
 end
 
 group :development do
@@ -55,6 +57,7 @@ group :development do
 end
 
 group :test do
+  gem "site_prism"
   gem "webdrivers", "~> 4.4"
 end
 
