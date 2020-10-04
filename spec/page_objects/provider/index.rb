@@ -7,6 +7,7 @@ module PageObjects
 
       set_url "/"
       sections :providers, ProviderRow, "tr.providers__row"
+      element :add_provider_button, ".govuk-button"
     end
   end
 end

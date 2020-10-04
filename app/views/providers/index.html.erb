@@ -3,8 +3,14 @@
     <h1 class="govuk-heading-xl">Providers</h1>
   </div>
 </div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+
+    <p class="govuk-body">
+      <%= link_to "Add Provider", new_provider_path , { class:"govuk-button", data: { module: "govuk-button" } } %>
+    </p>
+
     <table class="govuk-table providers">
       <%- @providers.each do |provider| -%>
         <tr class="govuk-table__row providers__row">
