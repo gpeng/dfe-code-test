@@ -7,6 +7,8 @@ module PageObjects
       element :address_3, "input#provider-address-3-field"
       element :postcode, "input#provider-postcode-field"
       element :submit_button, "input.govuk-button"
+
+      element :error_message, ".govuk-error-summary"
     end
   end
 end

@@ -10,6 +10,14 @@ feature "create provider" do
     and_the_new_provider_is_listed
   end
 
+  scenario "with invalid parameters" do
+    given_i_am_on_the_provider_index_page
+    and_i_click_the_add_provider_button
+    and_i_enter_invalid_parameters
+    when_i_click_the_create_button
+    then_an_error_message_is_displayed
+  end
+
   def given_i_am_on_the_provider_index_page
     provider_index_page.load
   end
@@ -26,6 +34,10 @@ feature "create provider" do
     provider_new_page.postcode.set "L1 1AA"
   end
 
+  def and_i_enter_invalid_parameters
+    provider_new_page.name.set ""
+  end
+
   def when_i_click_the_create_button
     provider_new_page.submit_button.click
   end
@@ -36,6 +48,10 @@ feature "create provider" do
 
   def and_the_new_provider_is_listed
     expect(provider_index_page.providers.last).to have_content("Bishop Auckland College")
+  end
+
+  def then_an_error_message_is_displayed
+    expect(provider_new_page.error_message).to be_visible
   end
 
   def provider_index_page

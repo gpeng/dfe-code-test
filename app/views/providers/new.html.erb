@@ -1,13 +1,19 @@
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Add provider</h1>
-    <%= form_with model: @provider, local: true do |f| %>
+<%= form_with model: @provider, local: true do |f| %>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <%= f.govuk_error_summary("You'll need to correct some information") %>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Add provider</h1>
       <%= f.govuk_text_field :name%>
       <%= f.govuk_text_field :address_1, label: { text: "Address line 1" } %>
       <%= f.govuk_text_field :address_2, label: { text: "Address line 2" } %>
       <%= f.govuk_text_field :address_3, label: { text: "Address line 3" } %>
       <%= f.govuk_text_field :postcode, label: { text: "Postcode" } %>
       <%= f.govuk_submit "Create" %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% end %>
