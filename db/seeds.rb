@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+40.times do
+  provider = FactoryBot.create(:provider)
+  rand(15...35).times do
+    provider.trainees << FactoryBot.build(:trainee)
+  end
+end
