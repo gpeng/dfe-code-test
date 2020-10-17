@@ -13,11 +13,7 @@
 
     <table class="govuk-table providers">
       <%- @providers.each do |provider| -%>
-        <tr class="govuk-table__row providers__row">
-          <td class="govuk-table__cell providers__name">
-            <%= provider.name %>
-          </td>
-        </tr>
+        <%= render partial: "provider_row", locals: { provider: provider } %>
       <%- end -%>
     </table>
   </div>
